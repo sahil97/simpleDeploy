@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
-import Container from "./containers/Main/Main";
+import FileBrowser from "./containers/Main/Main";
 
 function App() {
   return (
     <div className="App">
-      <h1>App working</h1>
-      <Container />
+      <FileBrowser />
     </div>
   );
 }

@@ -1,43 +1,92 @@
 import React, { Component } from "react";
+import "./FileBrowser.css";
 import File from "../../components/File/File";
+import { TiArrowBack } from "react-icons/ti";
 import axios from "../../axios-files";
 
-class Container extends Component {
+class FileBrowser extends Component {
   state = {
-    fileList: ["file1", "file2"]
+    fileList: ["file1", "file2"],
+    filePath: [],
+    dirPath: ""
   };
 
   componentDidMount() {
-    console.log("componentDidMout - Main");
-    axios.get("/ignition").then(res => console.log("res", res.data));
+    this.fetchFiles("");
   }
 
+  fetchFiles = filePath => {
+    axios
+      .post("/files", {
+        path: this.state.filePath.join("/")
+      })
+      .then(res => {
+        if (res.data.files) {
+          this.setState({
+            dirPath: res.data.dirPath,
+            fileList: res.data.files
+          });
+        }
+      });
+  };
+
   fileClickHandler = filename => {
-    let filePath = this.state.filePath;
-    filePath.push(filename);
-    console.log(this.state.filePath);
+    if (filename.split(".").length > 1) {
+      alert("You can only click on folders");
+    } else {
+      if (filename === "up") {
+        filename = "..";
+      }
+      let filePath = this.state.filePath;
+      filePath.push(filename);
+      console.log("filePath", filePath);
+      this.fetchFiles(this.state.filePath);
+    }
   };
 
   render() {
     let fileDiv = this.state.fileList.map(file => {
       return (
-        <File
-          key={file}
-          filename={file}
-          onClick={e => this.fileClickHandler(file)}
-        />
+        <tr key={file}>
+          <td>
+            <File filename={file} onClick={e => this.fileClickHandler(file)} />
+          </td>
+        </tr>
       );
     });
 
     return (
-      <div>
-        <h1>Container Working</h1>
-        <div onClick={e => this.fileClickHandler("..")}>Up</div>
-        <br />
-        {fileDiv}
+      <div className="container mt-5 fileBrowserContainer">
+        <h1>Browse Directory</h1>
+        <hr />
+
+        <div className="fileSystem">
+          <div className="d-flex justify-content-between form-group">
+            <input
+              type="text"
+              className="form-control path"
+              value={this.state.dirPath}
+              readOnly
+            />
+            <button className="up" onClick={e => this.fileClickHandler("up")}>
+              <TiArrowBack className="upArrow" /> Up
+            </button>
+          </div>
+          <div className="fileList">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col">FileName</th>
+                </tr>
+              </thead>
+              <tbody>{fileDiv}</tbody>
+            </table>
+            <br />
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default Container;
+export default FileBrowser;
