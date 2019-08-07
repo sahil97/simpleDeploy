@@ -41,3 +41,39 @@
 .projectName {
   margin-left: 1em;
 }
+
+.projectPageHeader {
+  margin-bottom: 2em;
+}
+
+.projectPageContainer {
+  margin-top: 3em;
+}
+
+.projectPageContainer .nav-link {
+  color: #999;
+}
+
+.projectPageContainer .nav-link.Active {
+  color: #000;
+  border: 1px solid transparent;
+  font-weight: bold;
+  border-bottom: 1.5px solid blue;
+}
+
+.projectDetails {
+  margin-top: 2em;
+}
+
+.projectDetails h5 {
+  text-align: left;
+  font-weight: 400;
+}
+
+.projectDetails form {
+  margin: 2em 0;
+}
+
+.projectDetails form .btn {
+  padding: 0.75em 2em;
+}

@@ -4,8 +4,8 @@ import "./ProjectPage.css";
 class ProjectPage extends Component {
   render() {
     return (
-      <div className="container mt-5">
-        <header>
+      <div className="container projectPageContainer">
+        <header className="projectPageHeader">
           <div className="row">
             <img
               alt="projectLogo"
@@ -21,6 +21,78 @@ class ProjectPage extends Component {
             </div>
           </div>
         </header>
+        <nav>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link Active" href="#">
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Activity
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div className="projectDetails">
+          <h5> Project Details</h5>
+          <form>
+            <div class="form-group">
+              <label for="projectNameInput">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="projectNameInput"
+                placeholder="Enter Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="descriptionInput">Describe your project</label>
+              <input
+                type="text"
+                className="form-control"
+                id="descriptionInput"
+                placeholder="description"
+              />
+            </div>
+            <div className="form-group">
+              <label for="pathInput">Project Path</label>
+              <input
+                type="text"
+                className="form-control"
+                id="pathInput"
+                placeholder="Project Path"
+              />
+            </div>
+            <div className="form-group">
+              <label for="gitRepo">Git Repository</label>
+              <input
+                type="text"
+                className="form-control"
+                id="gitRepo"
+                placeholder="Git Repository Link"
+              />
+            </div>
+
+            <div className="form-group">
+              <label for="entryFileInput">Project Entry File</label>
+              <input
+                type="text"
+                className="form-control"
+                id="entryFileInput"
+                placeholder="Project Entry File"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+
+            <button type="submit" className="ml-3 btn btn-light" disabled>
+              Cancel
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
