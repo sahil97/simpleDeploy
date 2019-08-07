@@ -1,0 +1,35 @@
+.fileBrowserContainer {
+}
+
+.fileSystem {
+  text-align: left;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.path {
+  padding: 0.5em 0.5em;
+  letter-spacing: 0.1em;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  width: 80%;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+.up {
+  height: 50px;
+  box-sizing: border-box;
+  margin-left: 1em;
+  display: inline-block;
+  border: 1px solid #eee;
+  padding: 0.2em 1em;
+}
+
+.upArrow {
+  font-size: 2em;
+  padding-bottom: 0.2em;
+}
