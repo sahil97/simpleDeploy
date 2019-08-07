@@ -32,17 +32,19 @@ app.get("/ignition", (req, res) => {
 
 app.post("/files", (req, res) => {
   let pathStack = req.body["path"];
-  console.log("pathStack", pathStack);
   let dirPath = path.join(__dirname, pathStack);
+  console.log("dirPath", dirPath);
   fs.readdir(dirPath, (err, files) => {
     if (err) {
       res.send("Unable to scan dir" + err);
     }
     const fileList = [];
-    files.forEach(file => {
-      fileList.push(file);
-    });
-    res.json({ files: fileList });
+    if (files) {
+      files.forEach(file => {
+        fileList.push(file);
+      });
+      res.json({ dirPath: dirPath, files: fileList });
+    }
   });
 });
 
