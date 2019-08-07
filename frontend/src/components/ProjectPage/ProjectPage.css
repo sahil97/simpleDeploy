@@ -77,3 +77,12 @@
 .projectDetails form .btn {
   padding: 0.75em 2em;
 }
+
+.projectDestroy .btn-danger {
+  padding: 1em;
+  margin-top: 5px;
+}
+
+.projectDestroy h3 {
+  max-width: 50%;
+}

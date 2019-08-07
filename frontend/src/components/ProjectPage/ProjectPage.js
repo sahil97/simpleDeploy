@@ -93,6 +93,21 @@ class ProjectPage extends Component {
             </button>
           </form>
         </div>
+        <div className="projectDestroy mt-5 mb-5">
+          <hr />
+          <div className="d-flex justify-content-between mt-5">
+            <div className="">
+              <h3>Delete project</h3>
+              <p>
+                To delete a project, you must move or delete all resources
+                within it. Default project cannot be deleted.
+              </p>
+            </div>
+            <div className="">
+              <button className="btn btn-danger"> Delete Project</button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
