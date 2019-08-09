@@ -4,6 +4,10 @@ import { FaChevronDown } from "react-icons/fa";
 import ProjectName from "../../containers/ProjectName/ProjectName";
 
 class Dashboard extends Component {
+  projectNameClickHandler = projectName => {
+    this.props.history.push("/projects");
+  };
+
   render() {
     return (
       <div className="container Dashboard">
@@ -23,7 +27,13 @@ class Dashboard extends Component {
             <tbody>
               <tr>
                 <td className="projectName">
-                  <ProjectName name="Testing123" attrs="React" />
+                  <ProjectName
+                    onClick={e => {
+                      this.projectNameClickHandler("Testing123");
+                    }}
+                    name="Testing123"
+                    attrs="React"
+                  />
                 </td>
                 <td>Yesterday</td>
                 <td>Yesterday</td>

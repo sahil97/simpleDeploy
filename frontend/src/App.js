@@ -4,14 +4,21 @@ import { Switch, Route } from "react-router";
 import Dashboard from "./components/Dashboard/Dashboard";
 import ProjectsPage from "./components/ProjectPage/ProjectPage";
 import FileBrowser from "./components/FileBrowser/FileBrowser";
+import SideBar from "./components/SideBar/SideBar";
+
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route path="/projects" component={ProjectsPage} />
-        <Route path="/fileBrowser" component={FileBrowser} />
-        <Route path="/" exact component={Dashboard} />
-      </Switch>
+      <div className="row">
+        <SideBar />
+        <div className="ContentWrapper">
+          <Switch>
+            <Route path="/projects" component={ProjectsPage} />
+            <Route path="/fileBrowser" component={FileBrowser} />
+            <Route path="/" exact component={Dashboard} />
+          </Switch>
+        </div>
+      </div>
     </div>
   );
 }

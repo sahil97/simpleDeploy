@@ -22,14 +22,14 @@ class ProjectPage extends Component {
           </div>
         </header>
         <nav>
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link Active" href="#">
+          <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <a className="nav-link Active" href="#">
                 Settings
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Activity
               </a>
             </li>
@@ -38,17 +38,17 @@ class ProjectPage extends Component {
         <div className="projectDetails">
           <h5> Project Details</h5>
           <form>
-            <div class="form-group">
-              <label for="projectNameInput">Name</label>
+            <div className="form-group">
+              <label htmlFor="projectNameInput">Name</label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="projectNameInput"
                 placeholder="Enter Name"
               />
             </div>
-            <div class="form-group">
-              <label for="descriptionInput">Describe your project</label>
+            <div className="form-group">
+              <label htmlFor="descriptionInput">Describe your project</label>
               <input
                 type="text"
                 className="form-control"
@@ -57,7 +57,7 @@ class ProjectPage extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="pathInput">Project Path</label>
+              <label htmlFor="pathInput">Project Path</label>
               <input
                 type="text"
                 className="form-control"
@@ -66,7 +66,7 @@ class ProjectPage extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="gitRepo">Git Repository</label>
+              <label htmlFor="gitRepo">Git Repository</label>
               <input
                 type="text"
                 className="form-control"
@@ -76,7 +76,7 @@ class ProjectPage extends Component {
             </div>
 
             <div className="form-group">
-              <label for="entryFileInput">Project Entry File</label>
+              <label htmlFor="entryFileInput">Project Entry File</label>
               <input
                 type="text"
                 className="form-control"
@@ -104,7 +104,7 @@ class ProjectPage extends Component {
               </p>
             </div>
             <div className="">
-              <button className="btn btn-danger"> Delete Project</button>
+              <button className="btn btn-danger"> Delete</button>
             </div>
           </div>
         </div>
