@@ -7,8 +7,8 @@ class SideBar extends Component {
   render() {
     return (
       <Menu borderless vertical stackable fixed="left" className="side-nav">
-        <SideBarItem highlight={true} label="Home" icon="home" />
-        <SideBarItem className="sideBarItem" label="Trending" icon="fire" />
+        <SideBarItem goto="/" highlight={true} label="Home" icon="home" />
+        <SideBarItem label="Logout" icon="sign-out" />
       </Menu>
     );
   }

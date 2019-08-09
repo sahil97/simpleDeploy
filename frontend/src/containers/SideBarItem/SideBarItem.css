@@ -11,8 +11,13 @@
   color: #888888;
 }
 
+.sidebar-item span {
+  color: #000;
+}
+
 .sidebar-item.highlight-item span {
   font-weight: 600;
+  color: #3b5cff;
 }
 
 .sidebar-item.highlight-item i.icon {

@@ -19,6 +19,10 @@
   padding-top: 64px;
 }
 
+.ui.menu.fixed.side-nav .sidebar-item {
+  cursor: pointer;
+}
+
 .ui.menu.fixed.side-nav .sidebar-item:hover {
   background: #ebebeb;
 }
