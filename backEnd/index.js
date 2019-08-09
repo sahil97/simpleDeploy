@@ -10,6 +10,9 @@ const bodyParser = require("body-parser");
 const PORT = 3333;
 const app = express();
 
+// routes
+const routes = require("./app/routes");
+
 // Middlewares
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -30,23 +33,34 @@ app.get("/ignition", (req, res) => {
   res.send("simpleDeploy Running");
 });
 
-app.post("/files", (req, res) => {
-  let pathStack = req.body["path"];
-  let dirPath = path.join(__dirname, pathStack);
-  console.log("dirPath", dirPath);
-  fs.readdir(dirPath, (err, files) => {
-    if (err) {
-      res.send("Unable to scan dir" + err);
-    }
-    const fileList = [];
-    if (files) {
-      files.forEach(file => {
-        fileList.push(file);
-      });
-      res.json({ dirPath: dirPath, files: fileList });
-    }
-  });
-});
+app.use("/", routes.api(app));
+
+// app.post("/files", (req, res) => {
+//   let pathStack = req.body["path"];
+//   debugger;
+//   let dirPath = path.join(__dirname, pathStack);
+//   console.log("dirPath", dirPath);
+//   fs.readdir(dirPath, (err, files) => {
+//     if (err) {
+//       return {};
+//     }
+//     const fileList = [];
+//     if (files) {
+//       files.forEach(file => {
+//         fileList.push(file);
+//       });
+//       console.log("fileList", fileList);
+//       // return responseWrapper.response(true, 200, "", {
+//       //   files: fileList,
+//       //   dirPath: dirPath
+//       // });
+//       res.json({
+//         files: fileList,
+//         dirPath: dirPath
+//       });
+//     }
+//   });
+// });
 
 const server = app.listen(PORT, () => {
   console.log("Running on Port", PORT);
