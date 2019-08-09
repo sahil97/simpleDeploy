@@ -21,10 +21,10 @@ class FileBrowser extends Component {
         path: this.state.filePath.join("/")
       })
       .then(res => {
-        if (res.data.files) {
+        if (res.data.data.files) {
           this.setState({
-            dirPath: res.data.dirPath,
-            fileList: res.data.files
+            dirPath: res.data.data.dirPath,
+            fileList: res.data.data.files
           });
         }
       });
