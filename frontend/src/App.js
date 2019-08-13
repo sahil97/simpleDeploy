@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import ProjectsPage from "./containers/ProjectPage/ProjectPage";
 import FileBrowser from "./containers/FileBrowser/FileBrowser";
-import SideBar from "./containers/SideBar/SideBar";
+import SideBar from "./components/SideBar/SideBar";
 
 function App() {
   return (

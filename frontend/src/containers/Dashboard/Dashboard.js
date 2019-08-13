@@ -3,19 +3,34 @@ import "./Dashboard.css";
 import { FaChevronDown } from "react-icons/fa";
 import ProjectName from "../../components/ProjectName/ProjectName";
 import { Icon } from "semantic-ui-react";
+import Modal from "../../components/UI/Modal/Modal";
 
 class Dashboard extends Component {
+  state = {
+    newProjectModalShow: false
+  };
+
   projectNameClickHandler = projectName => {
     this.props.history.push("/projects");
   };
 
+  modalClickHandler = () => {
+    this.setState({ newProjectModalShow: true });
+  };
+
+  modalCancelHandler = () => {
+    this.setState({ newProjectModalShow: false });
+  };
+
   render() {
-    return (
+    let dashboard = (
       <div className="container Dashboard">
         <div className="d-flex justify-content-between">
           <h1>Project Dashboard</h1>
-          <button className="btn btn-secondary">
-            {" "}
+          <button
+            className="btn btn-secondary"
+            onClick={this.modalClickHandler}
+          >
             <span>
               <Icon size="large" name="long arrow alternate right" />
             </span>
@@ -57,6 +72,27 @@ class Dashboard extends Component {
             </tbody>
           </table>
         </div>
+      </div>
+    );
+
+    let newProjectForm = (
+      <div>
+        <h3>Hello</h3>
+        <h4>Testing Modal</h4>
+      </div>
+    );
+
+    return (
+      <div>
+        {this.state.newProjectModalShow ? (
+          <Modal
+            show={this.state.newProjectModalShow}
+            modalClosed={this.modalCancelHandler}
+          >
+            {newProjectForm}
+          </Modal>
+        ) : null}
+        {dashboard}
       </div>
     );
   }
