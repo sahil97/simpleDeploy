@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FileBrowser.css";
-import File from "../../containers/File/File";
+import File from "../../components/File/File";
 import { TiArrowBack } from "react-icons/ti";
 import axios from "../../axios-files";
 

@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 import { Switch, Route } from "react-router";
-import Dashboard from "./components/Dashboard/Dashboard";
-import ProjectsPage from "./components/ProjectPage/ProjectPage";
-import FileBrowser from "./components/FileBrowser/FileBrowser";
-import SideBar from "./components/SideBar/SideBar";
+import Dashboard from "./containers/Dashboard/Dashboard";
+import ProjectsPage from "./containers/ProjectPage/ProjectPage";
+import FileBrowser from "./containers/FileBrowser/FileBrowser";
+import SideBar from "./containers/SideBar/SideBar";
 
 function App() {
   return (

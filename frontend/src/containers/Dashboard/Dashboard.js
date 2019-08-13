@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
 import { FaChevronDown } from "react-icons/fa";
-import ProjectName from "../../containers/ProjectName/ProjectName";
+import ProjectName from "../../components/ProjectName/ProjectName";
 import { Icon } from "semantic-ui-react";
 
 class Dashboard extends Component {
