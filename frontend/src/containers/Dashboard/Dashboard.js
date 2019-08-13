@@ -4,6 +4,7 @@ import { FaChevronDown } from "react-icons/fa";
 import ProjectName from "../../components/ProjectName/ProjectName";
 import { Icon } from "semantic-ui-react";
 import Modal from "../../components/UI/Modal/Modal";
+import NewProjectForm from "../NewProjectForm/NewProjectForm";
 
 class Dashboard extends Component {
   state = {
@@ -76,10 +77,7 @@ class Dashboard extends Component {
     );
 
     let newProjectForm = (
-      <div>
-        <h3>Hello</h3>
-        <h4>Testing Modal</h4>
-      </div>
+      <NewProjectForm formCancelled={this.modalCancelHandler} />
     );
 
     return (
